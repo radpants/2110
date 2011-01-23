@@ -13,8 +13,10 @@ class Level1 < GameState
     @player = Player.create :x => 256, :y => 256, :zorder => 1000
     
     @cursor = Cursor.create :x => 100, :y => 100, :zorder => 2000
-  end
     
+    @test_crate = Crate.create :x => 100, :y => 500, :zorder => 1200, :color => Color.new(0xffaaccee)
+  end
+  
   def update
     super
     @cursor.x = $window.mouse_x

@@ -51,7 +51,7 @@ class Player < GameObject
     
     @jumping = true
     @against_wall = :none
-    self.each_collision(Stone) do |me, stone|
+    self.each_collision(Stone, Crate) do |me, stone|
       #if self.previous_y > stone.y + 32 and self.previous_x < stone.x - 16 and self.previous_x > stone.x + 48
       #  me.y = stone.y + 70
       #  self.velocity_y *= -0.5
@@ -253,65 +253,118 @@ class PlayerSpring < GameObject
     @player = player
   end
   
+  # TODO: Make this work better!! Such as:
+  #   The claw is a projectile, which is fired out of the player
+  #   The spring image just updates every frame to connect the player to the claw
+  #   If the claw travels {SOME_MAX} distance without hitting anything, it retracts
+  #   On mouse release, the claw releases and retracts (if it's connected)
+  #   On mouse release, the claw retracts if it didn't connect
+  
   def update
     if self.visible
       
-
-      unless @clamped
-        @claw.each_bounding_box_collision(Stone) do |claw, stone|
-          puts "#{stone.class}: #{stone.x}, #{stone.y}"
-          @clamped = true
-        end
-      end
+      angle_to_player = Math.atan2( @claw.y - @player.y, @claw.x - @player.x )
+      self.factor_x = dist(@claw.x,@claw.y,self.x,self.y) / 16.0
+      self.angle = Math.atan2( @claw.y - self.y, @claw.x - self.x) * ( 180.0 / 3.14159 )
       
       if @clamped
-        self.factor_x = dist(@claw.x,@claw.y,self.x,self.y) / 16.0
-        self.angle = Math.atan2( @claw.y - self.y, @claw.x - self.x) * ( 180.0 / 3.14159 )
-        
         s = (self.factor_x*self.factor_x) * 0.03
         s = 1.2 if s > 1.2
         @player.acceleration_x += s * Math.cos(self.angle * (3.14159 / 180.0 ))
         @player.velocity_y += s * Math.sin(self.angle * (3.14159 / 180.0 ))
-        
       else
-        self.factor_x = ( (self.factor_x * @tween_length) + @target_factor ) / (@tween_length + 1)
-        @claw.x = ( ( @claw.x * @tween_length ) + @target[0] ) / (@tween_length + 1)
-        @claw.y = ( ( @claw.y * @tween_length ) + @target[1] ) / (@tween_length + 1)
+        @claw.acceleration_x = -2 * Math.cos(angle_to_player)
+        @claw.acceleration_y = -2 * Math.sin(angle_to_player) 
+        
+        @claw.each_bounding_box_collision(Stone) do |claw, stone|
+          @clamped = true
+          puts "CLAMPS!"
+          @claw.acceleration_y = 0
+          @claw.acceleration_x = 0
+          @claw.velocity_y = 0
+          @claw.velocity_x = 0
+        end       
       end
+      
+      #
+      #
+      #unless @clamped
+      
+      #end
+      #
+      #if @clamped
+      #  self.factor_x = dist(@claw.x,@claw.y,self.x,self.y) / 16.0
+      #  self.angle = Math.atan2( @claw.y - self.y, @claw.x - self.x) * ( 180.0 / 3.14159 )
+      #  
+      #  s = (self.factor_x*self.factor_x) * 0.03
+      #  s = 1.2 if s > 1.2
+      #  @player.acceleration_x += s * Math.cos(self.angle * (3.14159 / 180.0 ))
+      #  @player.velocity_y += s * Math.sin(self.angle * (3.14159 / 180.0 ))
+      #  
+      #else
+      #  self.factor_x = ( (self.factor_x * @tween_length) + @target_factor ) / (@tween_length + 1)
+      #  @claw.x = ( ( @claw.x * @tween_length ) + @target[0] ) / (@tween_length + 1)
+      #  @claw.y = ( ( @claw.y * @tween_length ) + @target[1] ) / (@tween_length + 1)
+      #end
     end
   end
   
   
   def fire_at x, y
-    if @ready
-      @target = [x,y]
-      @target_factor = dist(x,y,self.x,self.y) / 16.0
-      self.angle = Math.atan2( y - self.y, x - self.x) * ( 180.0 / 3.14159 )
-      self.show!
-      @claw.show!
-      @claw.x = self.x
-      @claw.y = self.y-32
-      @claw.angle = self.angle
-      after(250)  { retract unless @clamped }
-    end
+    #if @ready
+    #  @target = [x,y]
+    #  @target_factor = dist(x,y,self.x,self.y) / 16.0
+    #  self.angle = Math.atan2( y - self.y, x - self.x) * ( 180.0 / 3.14159 )
+    #  self.show!
+    #  @claw.show!
+    #  @claw.x = self.x
+    #  @claw.y = self.y-32
+    #  @claw.angle = self.angle
+    #  after(250)  { retract unless @clamped }
+    #end
+    @claw.acceleration_x = 0
+    @claw.acceleration_y = 0
+    @claw.velocity_x = 0
+    @claw.velocity_y = 0
+    
+    theta = Math.atan2( y - @player.y, x - @player.x)
+    @claw.x = @player.x
+    @claw.y = @player.y
+    @claw.angle = theta * ( 180.0 / 3.14159 )
+    @claw.show!
+    self.show!
+    @claw.velocity_x = 45 * Math.cos(theta)
+    @claw.velocity_y = 45 * Math.sin(theta)
+    
+    
   end
   
   def retract
-    if @clamped
-      @clamped = false
-      retract
-    else
-      @target = [self.x, self.y]
-      @target_factor = 0
-      @ready = true 
-      self.hide!
-      @claw.hide!
-    end
+    #if @clamped
+    #  @clamped = false
+    #  retract
+    #else
+    #  @target = [self.x, self.y]
+    #  @target_factor = 0
+    #  @ready = true 
+    #  self.hide!
+    #  @claw.hide!
+    #end
+    @clamped = false
+    @claw.x = @player.x
+    @claw.y = @player.y
+    @claw.acceleration_x = 0
+    @claw.acceleration_y = 0
+    @claw.velocity_x = 0
+    @claw.velocity_y = 0
+    self.hide!
+    @claw.hide!
+    self.factor_x = 2
   end
 end
 
 class Grabber < GameObject
-  traits :collision_detection, :bounding_box
+  traits :collision_detection, :bounding_box, :velocity
   
   def setup
     @image = Image["claw.png"]

@@ -4,6 +4,7 @@ require 'chingu'
 require 'player'
 require 'level1'
 require 'tiles'
+require 'crate'
 
 include Gosu
 include Chingu
@@ -19,7 +20,7 @@ class Game < Chingu::Window
   
   def setup
     retrofy
-    self.factor = 3
+    self.factor = 2
     switch_game_state(Level1.new)
   end
 end
