@@ -2,7 +2,7 @@ require 'rubygems'
 require 'chingu'
 
 require 'player'
-require 'level1'
+require 'play'
 require 'tiles'
 require 'crate'
 
@@ -19,9 +19,11 @@ class Game < Chingu::Window
   end
   
   def setup
+    @music = Song["I_am_a_robot_I_save_cats.mp3"]
+    @music.play true
     retrofy
     self.factor = 2
-    switch_game_state(Level1.new)
+    push_game_state Play
   end
 end
 
@@ -37,6 +39,10 @@ class Backdrop < GameObject
   def setup
     @image = Image["bg.png"]
     self.rotation_center = :left_top
+  end
+  
+  def set_image path
+    @image = Image[path]
   end
 end
 

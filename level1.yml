@@ -335,6 +335,10 @@
    :x: 0
    :y: 192
    :zorder: 83
+- SpawnPoint: 
+   :x: 160.0
+   :y: 224.0
+   :zorder: 1000
 - Stone:
    :x: 1856
    :y: 192
@@ -368,1363 +372,1366 @@
    :y: 224
    :zorder: 91
 - Stone:
-- Stone:
-   :x: 832
+   :x: 224
    :y: 224
    :zorder: 92
 - Stone:
-   :x: 864
+   :x: 832
    :y: 224
    :zorder: 93
 - Stone:
-   :x: 896
+   :x: 864
    :y: 224
    :zorder: 94
 - Stone:
-   :x: 928
+   :x: 896
    :y: 224
    :zorder: 95
 - Stone:
-   :x: 1856
+   :x: 928
    :y: 224
    :zorder: 96
 - Stone:
-   :x: 2048
+   :x: 1856
    :y: 224
    :zorder: 97
 - Stone:
-   :x: 2912
+   :x: 2048
    :y: 224
    :zorder: 98
 - Stone:
-   :x: 4064
+   :x: 2912
    :y: 224
    :zorder: 99
 - Stone:
-   :x: 0
-   :y: 256
+   :x: 4064
+   :y: 224
    :zorder: 100
 - Stone:
-   :x: 1856
+   :x: 0
    :y: 256
    :zorder: 101
 - Stone:
-   :x: 2048
+   :x: 1856
    :y: 256
    :zorder: 102
 - Stone:
-   :x: 2080
+   :x: 2048
    :y: 256
    :zorder: 103
 - Stone:
-   :x: 2112
+   :x: 2080
    :y: 256
    :zorder: 104
 - Stone:
-   :x: 2144
+   :x: 2112
    :y: 256
    :zorder: 105
 - Stone:
-   :x: 2176
+   :x: 2144
    :y: 256
    :zorder: 106
 - Stone:
-   :x: 2208
+   :x: 2176
    :y: 256
    :zorder: 107
 - Stone:
-   :x: 2240
+   :x: 2208
    :y: 256
    :zorder: 108
 - Stone:
-   :x: 2272
+   :x: 2240
    :y: 256
    :zorder: 109
 - Stone:
-   :x: 2304
+   :x: 2272
    :y: 256
    :zorder: 110
 - Stone:
-   :x: 2336
+   :x: 2304
    :y: 256
    :zorder: 111
 - Stone:
-   :x: 2368
+   :x: 2336
    :y: 256
    :zorder: 112
 - Stone:
-   :x: 2400
+   :x: 2368
    :y: 256
    :zorder: 113
 - Stone:
-   :x: 2432
+   :x: 2400
    :y: 256
    :zorder: 114
 - Stone:
-   :x: 2464
+   :x: 2432
    :y: 256
    :zorder: 115
 - Stone:
-   :x: 2496
+   :x: 2464
    :y: 256
    :zorder: 116
 - Stone:
-   :x: 2528
+   :x: 2496
    :y: 256
    :zorder: 117
 - Stone:
-   :x: 2560
+   :x: 2528
    :y: 256
    :zorder: 118
 - Stone:
-   :x: 2912
+   :x: 2560
    :y: 256
    :zorder: 119
 - Stone:
-   :x: 4064
+   :x: 2912
    :y: 256
    :zorder: 120
 - Stone:
-   :x: 0
-   :y: 288
+   :x: 4064
+   :y: 256
    :zorder: 121
 - Stone:
-   :x: 1856
+   :x: 0
    :y: 288
    :zorder: 122
 - Stone:
-   :x: 2048
+   :x: 1856
    :y: 288
    :zorder: 123
 - Stone:
-   :x: 2912
+   :x: 2048
    :y: 288
    :zorder: 124
 - Stone:
-   :x: 2944
+   :x: 2912
    :y: 288
    :zorder: 125
 - Stone:
-   :x: 2976
+   :x: 2944
    :y: 288
    :zorder: 126
 - Stone:
-   :x: 3008
+   :x: 2976
    :y: 288
    :zorder: 127
 - Stone:
-   :x: 3040
+   :x: 3008
    :y: 288
    :zorder: 128
 - Stone:
-   :x: 3072
+   :x: 3040
    :y: 288
    :zorder: 129
 - Stone:
-   :x: 3104
+   :x: 3072
    :y: 288
    :zorder: 130
 - Stone:
-   :x: 3136
+   :x: 3104
    :y: 288
    :zorder: 131
 - Stone:
-   :x: 3168
+   :x: 3136
    :y: 288
    :zorder: 132
 - Stone:
-   :x: 3744
+   :x: 3168
    :y: 288
    :zorder: 133
 - Stone:
-   :x: 3776
+   :x: 3744
    :y: 288
    :zorder: 134
 - Stone:
-   :x: 3808
+   :x: 3776
    :y: 288
    :zorder: 135
 - Stone:
-   :x: 3840
+   :x: 3808
    :y: 288
    :zorder: 136
 - Stone:
-   :x: 3872
+   :x: 3840
    :y: 288
    :zorder: 137
 - Stone:
-   :x: 3904
+   :x: 3872
    :y: 288
    :zorder: 138
 - Stone:
-   :x: 3936
+   :x: 3904
    :y: 288
    :zorder: 139
 - Stone:
-   :x: 3968
+   :x: 3936
    :y: 288
    :zorder: 140
 - Stone:
-   :x: 4000
+   :x: 3968
    :y: 288
    :zorder: 141
 - Stone:
-   :x: 4032
+   :x: 4000
    :y: 288
    :zorder: 142
 - Stone:
-   :x: 4064
+   :x: 4032
    :y: 288
    :zorder: 143
 - Stone:
-   :x: 0
-   :y: 320
+   :x: 4064
+   :y: 288
    :zorder: 144
 - Stone:
-   :x: 1856
+   :x: 0
    :y: 320
    :zorder: 145
 - Stone:
-   :x: 1888
+   :x: 1856
    :y: 320
    :zorder: 146
 - Stone:
-   :x: 1920
+   :x: 1888
    :y: 320
    :zorder: 147
 - Stone:
-   :x: 1952
+   :x: 1920
    :y: 320
    :zorder: 148
 - Stone:
-   :x: 1984
+   :x: 1952
    :y: 320
    :zorder: 149
 - Stone:
-   :x: 2016
+   :x: 1984
    :y: 320
    :zorder: 150
 - Stone:
-   :x: 2048
+   :x: 2016
    :y: 320
    :zorder: 151
 - Stone:
-   :x: 3392
+   :x: 2048
    :y: 320
    :zorder: 152
 - Stone:
-   :x: 3424
+   :x: 3392
    :y: 320
    :zorder: 153
 - Stone:
-   :x: 3744
+   :x: 3424
    :y: 320
    :zorder: 154
 - Stone:
-   :x: 3776
+   :x: 3744
    :y: 320
    :zorder: 155
 - Stone:
-   :x: 0
-   :y: 352
+   :x: 3776
+   :y: 320
    :zorder: 156
 - Stone:
-   :x: 224
+   :x: 0
    :y: 352
    :zorder: 157
 - Stone:
-   :x: 256
+   :x: 224
    :y: 352
    :zorder: 158
 - Stone:
-   :x: 288
+   :x: 256
    :y: 352
    :zorder: 159
 - Stone:
-   :x: 320
+   :x: 288
    :y: 352
    :zorder: 160
 - Stone:
-   :x: 736
+   :x: 320
    :y: 352
    :zorder: 161
 - Stone:
-   :x: 768
+   :x: 736
    :y: 352
    :zorder: 162
 - Stone:
-   :x: 800
+   :x: 768
    :y: 352
    :zorder: 163
 - Stone:
-   :x: 832
+   :x: 800
    :y: 352
    :zorder: 164
 - Stone:
-   :x: 3392
+   :x: 832
    :y: 352
    :zorder: 165
 - Stone:
-   :x: 3424
+   :x: 3392
    :y: 352
    :zorder: 166
 - Stone:
-   :x: 3744
+   :x: 3424
    :y: 352
    :zorder: 167
 - Stone:
-   :x: 3776
+   :x: 3744
    :y: 352
    :zorder: 168
 - Stone:
-   :x: 0
-   :y: 384
+   :x: 3776
+   :y: 352
    :zorder: 169
 - Stone:
-   :x: 2912
+   :x: 0
    :y: 384
    :zorder: 170
 - Stone:
-   :x: 2944
+   :x: 2912
    :y: 384
    :zorder: 171
 - Stone:
-   :x: 2976
+   :x: 2944
    :y: 384
    :zorder: 172
 - Stone:
-   :x: 3008
+   :x: 2976
    :y: 384
    :zorder: 173
 - Stone:
-   :x: 3040
+   :x: 3008
    :y: 384
    :zorder: 174
 - Stone:
-   :x: 3072
+   :x: 3040
    :y: 384
    :zorder: 175
 - Stone:
-   :x: 3104
+   :x: 3072
    :y: 384
    :zorder: 176
 - Stone:
-   :x: 3136
+   :x: 3104
    :y: 384
    :zorder: 177
 - Stone:
-   :x: 3168
+   :x: 3136
    :y: 384
    :zorder: 178
 - Stone:
-   :x: 0
-   :y: 416
+   :x: 3168
+   :y: 384
    :zorder: 179
 - Stone:
-   :x: 1856
+   :x: 0
    :y: 416
    :zorder: 180
 - Stone:
-   :x: 1888
+   :x: 1856
    :y: 416
    :zorder: 181
 - Stone:
-   :x: 1920
+   :x: 1888
    :y: 416
    :zorder: 182
 - Stone:
-   :x: 1952
+   :x: 1920
    :y: 416
    :zorder: 183
 - Stone:
-   :x: 1984
+   :x: 1952
    :y: 416
    :zorder: 184
 - Stone:
-   :x: 2016
+   :x: 1984
    :y: 416
    :zorder: 185
 - Stone:
-   :x: 2048
+   :x: 2016
    :y: 416
    :zorder: 186
 - Stone:
-   :x: 2912
+   :x: 2048
    :y: 416
    :zorder: 187
 - Stone:
+   :x: 2912
+   :y: 416
+   :zorder: 188
+- Stone:
    :x: 0
    :y: 448
-   :zorder: 188
+   :zorder: 189
 - Crate: 
    :x: 928
-   :y: 448
-   :zorder: 189
-- Stone:
-   :x: 1856
    :y: 448
    :zorder: 190
 - Stone:
-   :x: 2048
+   :x: 1856
    :y: 448
    :zorder: 191
 - Stone:
-   :x: 2080
+   :x: 2048
    :y: 448
    :zorder: 192
 - Stone:
-   :x: 2112
+   :x: 2080
    :y: 448
    :zorder: 193
 - Stone:
-   :x: 2144
+   :x: 2112
    :y: 448
    :zorder: 194
 - Stone:
-   :x: 2176
+   :x: 2144
    :y: 448
    :zorder: 195
 - Stone:
-   :x: 2208
+   :x: 2176
    :y: 448
    :zorder: 196
 - Stone:
-   :x: 2240
+   :x: 2208
    :y: 448
    :zorder: 197
 - Stone:
-   :x: 2272
+   :x: 2240
    :y: 448
    :zorder: 198
 - Stone:
-   :x: 2304
+   :x: 2272
    :y: 448
    :zorder: 199
 - Stone:
-   :x: 2336
+   :x: 2304
    :y: 448
    :zorder: 200
 - Stone:
-   :x: 2368
+   :x: 2336
    :y: 448
    :zorder: 201
 - Stone:
-   :x: 2400
+   :x: 2368
    :y: 448
    :zorder: 202
 - Stone:
-   :x: 2432
+   :x: 2400
    :y: 448
    :zorder: 203
 - Stone:
-   :x: 2464
+   :x: 2432
    :y: 448
    :zorder: 204
 - Stone:
-   :x: 2496
+   :x: 2464
    :y: 448
    :zorder: 205
 - Stone:
-   :x: 2528
+   :x: 2496
    :y: 448
    :zorder: 206
 - Stone:
-   :x: 2560
+   :x: 2528
    :y: 448
    :zorder: 207
 - Stone:
-   :x: 2912
+   :x: 2560
    :y: 448
    :zorder: 208
 - Stone:
-   :x: 3008
+   :x: 2912
    :y: 448
    :zorder: 209
 - Stone:
-   :x: 0
-   :y: 480
+   :x: 3008
+   :y: 448
    :zorder: 210
 - Stone:
-   :x: 128
+   :x: 0
    :y: 480
    :zorder: 211
 - Stone:
-   :x: 160
+   :x: 128
    :y: 480
    :zorder: 212
 - Stone:
-   :x: 192
+   :x: 160
    :y: 480
    :zorder: 213
 - Stone:
-   :x: 224
+   :x: 192
    :y: 480
    :zorder: 214
 - Stone:
-   :x: 320
+   :x: 224
    :y: 480
    :zorder: 215
 - Stone:
-   :x: 352
+   :x: 320
    :y: 480
    :zorder: 216
 - Stone:
-   :x: 384
+   :x: 352
    :y: 480
    :zorder: 217
 - Stone:
-   :x: 416
+   :x: 384
    :y: 480
    :zorder: 218
 - Stone:
-   :x: 640
+   :x: 416
    :y: 480
    :zorder: 219
 - Stone:
-   :x: 672
+   :x: 640
    :y: 480
    :zorder: 220
 - Stone:
-   :x: 704
+   :x: 672
    :y: 480
    :zorder: 221
 - Stone:
-   :x: 736
+   :x: 704
    :y: 480
    :zorder: 222
 - Stone:
-   :x: 832
+   :x: 736
    :y: 480
    :zorder: 223
 - Stone:
-   :x: 864
+   :x: 832
    :y: 480
    :zorder: 224
 - Stone:
-   :x: 896
+   :x: 864
    :y: 480
    :zorder: 225
 - Stone:
-   :x: 928
+   :x: 896
    :y: 480
    :zorder: 226
 - Stone:
-   :x: 1760
+   :x: 928
    :y: 480
    :zorder: 227
 - Stone:
-   :x: 1792
+   :x: 1760
    :y: 480
    :zorder: 228
 - Stone:
-   :x: 1856
+   :x: 1792
    :y: 480
    :zorder: 229
 - Stone:
-   :x: 2048
+   :x: 1856
    :y: 480
    :zorder: 230
 - Stone:
-   :x: 2272
+   :x: 2048
    :y: 480
    :zorder: 231
 - Stone:
-   :x: 2560
+   :x: 2272
    :y: 480
    :zorder: 232
 - Stone:
-   :x: 2912
+   :x: 2560
    :y: 480
    :zorder: 233
 - Stone:
-   :x: 3008
+   :x: 2912
    :y: 480
    :zorder: 234
 - Stone:
-   :x: 0
-   :y: 512
+   :x: 3008
+   :y: 480
    :zorder: 235
 - Stone:
-   :x: 1760
+   :x: 0
    :y: 512
    :zorder: 236
 - Stone:
-   :x: 1856
+   :x: 1760
    :y: 512
    :zorder: 237
 - Stone:
-   :x: 2048
+   :x: 1856
    :y: 512
    :zorder: 238
 - Stone:
-   :x: 2272
+   :x: 2048
    :y: 512
    :zorder: 239
 - Stone:
-   :x: 2560
+   :x: 2272
    :y: 512
    :zorder: 240
 - Stone:
-   :x: 2912
+   :x: 2560
    :y: 512
    :zorder: 241
-- Crate: 
-   :x: 2976
+- Stone:
+   :x: 2912
    :y: 512
    :zorder: 242
-- Stone:
-   :x: 3008
+- Crate: 
+   :x: 2976
    :y: 512
    :zorder: 243
 - Stone:
-   :x: 0
-   :y: 544
+   :x: 3008
+   :y: 512
    :zorder: 244
 - Stone:
-   :x: 1664
+   :x: 0
    :y: 544
    :zorder: 245
 - Stone:
-   :x: 1696
+   :x: 1664
    :y: 544
    :zorder: 246
 - Stone:
-   :x: 1760
+   :x: 1696
    :y: 544
    :zorder: 247
 - Stone:
-   :x: 1856
+   :x: 1760
    :y: 544
    :zorder: 248
 - Stone:
-   :x: 2048
+   :x: 1856
    :y: 544
    :zorder: 249
 - Stone:
-   :x: 2272
+   :x: 2048
    :y: 544
    :zorder: 250
 - Stone:
-   :x: 2912
+   :x: 2272
    :y: 544
    :zorder: 251
 - Stone:
-   :x: 2976
+   :x: 2912
    :y: 544
    :zorder: 252
 - Stone:
-   :x: 3008
+   :x: 2976
    :y: 544
    :zorder: 253
 - Stone:
-   :x: 0
-   :y: 576
+   :x: 3008
+   :y: 544
    :zorder: 254
 - Stone:
-   :x: 1664
+   :x: 0
    :y: 576
    :zorder: 255
 - Stone:
-   :x: 1760
+   :x: 1664
    :y: 576
    :zorder: 256
 - Stone:
-   :x: 1856
+   :x: 1760
    :y: 576
    :zorder: 257
 - Stone:
-   :x: 2048
+   :x: 1856
    :y: 576
    :zorder: 258
 - Stone:
-   :x: 2272
+   :x: 2048
    :y: 576
    :zorder: 259
 - Stone:
-   :x: 2912
+   :x: 2272
    :y: 576
    :zorder: 260
 - Stone:
+   :x: 2912
+   :y: 576
+   :zorder: 261
+- Stone:
    :x: 0
    :y: 608
-   :zorder: 261
+   :zorder: 262
 - Crate: 
    :x: 736
-   :y: 608
-   :zorder: 262
-- Stone:
-   :x: 1568
    :y: 608
    :zorder: 263
 - Stone:
-   :x: 1600
+   :x: 1568
    :y: 608
    :zorder: 264
 - Stone:
-   :x: 1664
+   :x: 1600
    :y: 608
    :zorder: 265
 - Stone:
-   :x: 1760
+   :x: 1664
    :y: 608
    :zorder: 266
 - Stone:
-   :x: 1856
+   :x: 1760
    :y: 608
    :zorder: 267
 - Stone:
-   :x: 2048
+   :x: 1856
    :y: 608
    :zorder: 268
 - Stone:
-   :x: 2176
+   :x: 2048
    :y: 608
    :zorder: 269
 - Stone:
-   :x: 2368
+   :x: 2176
    :y: 608
    :zorder: 270
 - Stone:
-   :x: 2912
+   :x: 2368
    :y: 608
    :zorder: 271
 - Stone:
-   :x: 2944
+   :x: 2912
    :y: 608
    :zorder: 272
 - Stone:
-   :x: 2976
+   :x: 2944
    :y: 608
    :zorder: 273
 - Stone:
-   :x: 3008
+   :x: 2976
    :y: 608
    :zorder: 274
 - Stone:
-   :x: 3040
+   :x: 3008
    :y: 608
    :zorder: 275
 - Stone:
-   :x: 3072
+   :x: 3040
    :y: 608
    :zorder: 276
 - Stone:
-   :x: 0
-   :y: 640
+   :x: 3072
+   :y: 608
    :zorder: 277
 - Stone:
-   :x: 704
+   :x: 0
    :y: 640
    :zorder: 278
 - Stone:
-   :x: 736
+   :x: 704
    :y: 640
    :zorder: 279
 - Stone:
-   :x: 1568
+   :x: 736
    :y: 640
    :zorder: 280
 - Stone:
-   :x: 1664
+   :x: 1568
    :y: 640
    :zorder: 281
 - Stone:
-   :x: 1760
+   :x: 1664
    :y: 640
    :zorder: 282
 - Stone:
-   :x: 1856
+   :x: 1760
    :y: 640
    :zorder: 283
 - Stone:
-   :x: 2048
+   :x: 1856
    :y: 640
    :zorder: 284
 - Stone:
-   :x: 2176
+   :x: 2048
    :y: 640
    :zorder: 285
 - Stone:
-   :x: 2368
+   :x: 2176
    :y: 640
    :zorder: 286
 - Stone:
-   :x: 0
-   :y: 672
+   :x: 2368
+   :y: 640
    :zorder: 287
 - Stone:
-   :x: 704
+   :x: 0
    :y: 672
    :zorder: 288
 - Stone:
-   :x: 736
+   :x: 704
    :y: 672
    :zorder: 289
 - Stone:
-   :x: 1568
+   :x: 736
    :y: 672
    :zorder: 290
 - Stone:
-   :x: 1664
+   :x: 1568
    :y: 672
    :zorder: 291
 - Stone:
-   :x: 1760
+   :x: 1664
    :y: 672
    :zorder: 292
 - Stone:
-   :x: 1856
+   :x: 1760
    :y: 672
    :zorder: 293
 - Stone:
-   :x: 2048
+   :x: 1856
    :y: 672
    :zorder: 294
+- Stone:
+   :x: 2048
+   :y: 672
+   :zorder: 295
 - Crate: 
    :x: 2080
    :y: 672
-   :zorder: 295
-- Stone:
-   :x: 2176
-   :y: 672
    :zorder: 296
 - Stone:
-   :x: 2368
+   :x: 2176
    :y: 672
    :zorder: 297
 - Stone:
-   :x: 0
-   :y: 704
+   :x: 2368
+   :y: 672
    :zorder: 298
 - Stone:
-   :x: 704
+   :x: 0
    :y: 704
    :zorder: 299
 - Stone:
-   :x: 736
+   :x: 704
    :y: 704
    :zorder: 300
 - Stone:
-   :x: 1568
+   :x: 736
    :y: 704
    :zorder: 301
 - Stone:
-   :x: 1664
+   :x: 1568
    :y: 704
    :zorder: 302
 - Stone:
-   :x: 1760
+   :x: 1664
    :y: 704
    :zorder: 303
 - Stone:
-   :x: 1856
+   :x: 1760
    :y: 704
    :zorder: 304
 - Stone:
-   :x: 2048
+   :x: 1856
    :y: 704
    :zorder: 305
 - Stone:
-   :x: 2176
+   :x: 2048
    :y: 704
    :zorder: 306
 - Stone:
-   :x: 2368
+   :x: 2176
    :y: 704
    :zorder: 307
+- Stone:
+   :x: 2368
+   :y: 704
+   :zorder: 308
 - CrateDrop:
    :x: 3520.0
    :y: 736.0
-   :zorder: 308
+   :zorder: 1
 - Stone:
    :x: 0
    :y: 736
-   :zorder: 309
+   :zorder: 310
 - Stone:
    :x: 32
    :y: 736
-   :zorder: 310
+   :zorder: 311
 - Stone:
    :x: 64
    :y: 736
-   :zorder: 311
+   :zorder: 312
 - Stone:
    :x: 96
    :y: 736
-   :zorder: 312
+   :zorder: 313
 - Stone:
    :x: 128
    :y: 736
-   :zorder: 313
+   :zorder: 314
 - Stone:
    :x: 160
    :y: 736
-   :zorder: 314
+   :zorder: 315
 - Stone:
    :x: 192
    :y: 736
-   :zorder: 315
+   :zorder: 316
 - Stone:
    :x: 224
    :y: 736
-   :zorder: 316
+   :zorder: 317
 - Stone:
    :x: 256
    :y: 736
-   :zorder: 317
+   :zorder: 318
 - Stone:
    :x: 288
    :y: 736
-   :zorder: 318
+   :zorder: 319
 - Stone:
    :x: 320
    :y: 736
-   :zorder: 319
+   :zorder: 320
 - Stone:
    :x: 352
    :y: 736
-   :zorder: 320
+   :zorder: 321
 - Stone:
    :x: 384
    :y: 736
-   :zorder: 321
+   :zorder: 322
 - Stone:
    :x: 416
    :y: 736
-   :zorder: 322
+   :zorder: 323
 - Stone:
    :x: 448
    :y: 736
-   :zorder: 323
+   :zorder: 324
 - Stone:
    :x: 480
    :y: 736
-   :zorder: 324
+   :zorder: 325
 - Fire: 
    :x: 512
    :y: 736
-   :zorder: 325
+   :zorder: 326
 - Fire: 
    :x: 544
    :y: 736
-   :zorder: 326
+   :zorder: 327
 - Stone:
    :x: 576
    :y: 736
-   :zorder: 327
+   :zorder: 328
 - Stone:
    :x: 608
    :y: 736
-   :zorder: 328
+   :zorder: 329
 - Stone:
    :x: 640
    :y: 736
-   :zorder: 329
+   :zorder: 330
 - Stone:
    :x: 672
    :y: 736
-   :zorder: 330
+   :zorder: 331
 - Stone:
    :x: 704
    :y: 736
-   :zorder: 331
+   :zorder: 332
 - Stone:
    :x: 736
    :y: 736
-   :zorder: 332
+   :zorder: 333
 - Stone:
    :x: 768
    :y: 736
-   :zorder: 333
+   :zorder: 334
 - Stone:
    :x: 800
    :y: 736
-   :zorder: 334
+   :zorder: 335
 - Stone:
    :x: 832
    :y: 736
-   :zorder: 335
+   :zorder: 336
 - Stone:
    :x: 864
    :y: 736
-   :zorder: 336
+   :zorder: 337
 - Fire: 
    :x: 896
    :y: 736
-   :zorder: 337
+   :zorder: 338
 - Fire: 
    :x: 928
    :y: 736
-   :zorder: 338
+   :zorder: 339
 - Stone:
    :x: 960
    :y: 736
-   :zorder: 339
+   :zorder: 340
 - Stone:
    :x: 992
    :y: 736
-   :zorder: 340
+   :zorder: 341
 - Fire: 
    :x: 1024
    :y: 736
-   :zorder: 341
+   :zorder: 342
 - Fire: 
    :x: 1056
    :y: 736
-   :zorder: 342
+   :zorder: 343
 - Stone:
    :x: 1088
    :y: 736
-   :zorder: 343
+   :zorder: 344
 - Stone:
    :x: 1120
    :y: 736
-   :zorder: 344
+   :zorder: 345
 - Fire: 
    :x: 1152
    :y: 736
-   :zorder: 345
+   :zorder: 346
 - Fire: 
    :x: 1184
    :y: 736
-   :zorder: 346
+   :zorder: 347
 - Stone:
    :x: 1216
    :y: 736
-   :zorder: 347
+   :zorder: 348
 - Stone:
    :x: 1248
    :y: 736
-   :zorder: 348
+   :zorder: 349
 - Fire: 
    :x: 1280
    :y: 736
-   :zorder: 349
+   :zorder: 350
 - Fire: 
    :x: 1312
    :y: 736
-   :zorder: 350
+   :zorder: 351
 - Fire: 
    :x: 1344
    :y: 736
-   :zorder: 351
+   :zorder: 352
 - Fire: 
    :x: 1376
    :y: 736
-   :zorder: 352
+   :zorder: 353
 - Stone:
    :x: 1408
    :y: 736
-   :zorder: 353
+   :zorder: 354
 - Stone:
    :x: 1440
    :y: 736
-   :zorder: 354
+   :zorder: 355
 - Stone:
    :x: 1472
    :y: 736
-   :zorder: 355
+   :zorder: 356
 - Stone:
    :x: 1504
    :y: 736
-   :zorder: 356
+   :zorder: 357
 - Fire: 
    :x: 1536
    :y: 736
-   :zorder: 357
+   :zorder: 358
 - Stone:
    :x: 1568
    :y: 736
-   :zorder: 358
+   :zorder: 359
 - Stone:
    :x: 1600
    :y: 736
-   :zorder: 359
+   :zorder: 360
 - Fire: 
    :x: 1632
    :y: 736
-   :zorder: 360
+   :zorder: 361
 - Stone:
    :x: 1664
    :y: 736
-   :zorder: 361
+   :zorder: 362
 - Stone:
    :x: 1696
    :y: 736
-   :zorder: 362
+   :zorder: 363
 - Fire: 
    :x: 1728
    :y: 736
-   :zorder: 363
+   :zorder: 364
 - Stone:
    :x: 1760
    :y: 736
-   :zorder: 364
+   :zorder: 365
 - Stone:
    :x: 1792
    :y: 736
-   :zorder: 365
+   :zorder: 366
 - Fire: 
    :x: 1824
    :y: 736
-   :zorder: 366
+   :zorder: 367
 - Stone:
    :x: 1856
    :y: 736
-   :zorder: 367
+   :zorder: 368
 - Stone:
    :x: 2048
    :y: 736
-   :zorder: 368
+   :zorder: 369
 - Stone:
    :x: 2080
    :y: 736
-   :zorder: 369
+   :zorder: 370
 - Stone:
    :x: 2112
    :y: 736
-   :zorder: 370
+   :zorder: 371
 - Stone:
    :x: 2144
    :y: 736
-   :zorder: 371
+   :zorder: 372
 - Stone:
    :x: 2176
    :y: 736
-   :zorder: 372
+   :zorder: 373
 - Stone:
    :x: 2208
    :y: 736
-   :zorder: 373
+   :zorder: 374
 - Stone:
    :x: 2240
    :y: 736
-   :zorder: 374
+   :zorder: 375
 - Stone:
    :x: 2272
    :y: 736
-   :zorder: 375
+   :zorder: 376
 - Stone:
    :x: 2304
    :y: 736
-   :zorder: 376
+   :zorder: 377
 - Stone:
    :x: 2336
    :y: 736
-   :zorder: 377
+   :zorder: 378
 - Stone:
    :x: 2368
    :y: 736
-   :zorder: 378
+   :zorder: 379
 - Stone:
    :x: 2400
    :y: 736
-   :zorder: 379
+   :zorder: 380
 - Stone:
    :x: 2432
    :y: 736
-   :zorder: 380
+   :zorder: 381
 - Stone:
    :x: 2464
    :y: 736
-   :zorder: 381
+   :zorder: 382
 - Stone:
    :x: 2496
    :y: 736
-   :zorder: 382
+   :zorder: 383
 - Stone:
    :x: 2528
    :y: 736
-   :zorder: 383
+   :zorder: 384
 - Stone:
    :x: 2560
    :y: 736
-   :zorder: 384
+   :zorder: 385
 - Stone:
    :x: 2592
    :y: 736
-   :zorder: 385
+   :zorder: 386
 - Fire: 
    :x: 2624
    :y: 736
-   :zorder: 386
+   :zorder: 387
 - Fire: 
    :x: 2656
    :y: 736
-   :zorder: 387
+   :zorder: 388
 - Fire: 
    :x: 2688
    :y: 736
-   :zorder: 388
+   :zorder: 389
 - Fire: 
    :x: 2720
    :y: 736
-   :zorder: 389
+   :zorder: 390
 - Fire: 
    :x: 2752
    :y: 736
-   :zorder: 390
+   :zorder: 391
 - Stone:
    :x: 2784
    :y: 736
-   :zorder: 391
+   :zorder: 392
 - Stone:
    :x: 2816
    :y: 736
-   :zorder: 392
+   :zorder: 393
 - Stone:
    :x: 2848
    :y: 736
-   :zorder: 393
+   :zorder: 394
 - Stone:
    :x: 2880
    :y: 736
-   :zorder: 394
+   :zorder: 395
 - Stone:
    :x: 2912
    :y: 736
-   :zorder: 395
+   :zorder: 396
 - Stone:
    :x: 2944
    :y: 736
-   :zorder: 396
+   :zorder: 397
 - Stone:
    :x: 2976
    :y: 736
-   :zorder: 397
+   :zorder: 398
 - Stone:
    :x: 3008
    :y: 736
-   :zorder: 398
+   :zorder: 399
 - Stone:
    :x: 3040
    :y: 736
-   :zorder: 399
+   :zorder: 400
 - Stone:
    :x: 3072
    :y: 736
-   :zorder: 400
+   :zorder: 401
 - Stone:
    :x: 3104
    :y: 736
-   :zorder: 401
+   :zorder: 402
 - Stone:
    :x: 3136
    :y: 736
-   :zorder: 402
+   :zorder: 403
 - Stone:
    :x: 3168
    :y: 736
-   :zorder: 403
+   :zorder: 404
 - Stone:
    :x: 3200
    :y: 736
-   :zorder: 404
+   :zorder: 405
 - Stone:
    :x: 3232
    :y: 736
-   :zorder: 405
+   :zorder: 406
 - Stone:
    :x: 3264
    :y: 736
-   :zorder: 406
+   :zorder: 407
 - Stone:
    :x: 3296
    :y: 736
-   :zorder: 407
+   :zorder: 408
 - Stone:
    :x: 3328
    :y: 736
-   :zorder: 408
+   :zorder: 409
 - Stone:
    :x: 3360
    :y: 736
-   :zorder: 409
+   :zorder: 410
 - Stone:
    :x: 3392
    :y: 736
-   :zorder: 410
+   :zorder: 411
 - Stone:
    :x: 3424
    :y: 736
-   :zorder: 411
+   :zorder: 412
 - Stone:
    :x: 3456
    :y: 736
-   :zorder: 412
+   :zorder: 413
 - Stone:
    :x: 3488
    :y: 736
-   :zorder: 413
+   :zorder: 414
 - Stone:
    :x: 3520
    :y: 736
-   :zorder: 414
+   :zorder: 415
 - Stone:
    :x: 3552
    :y: 736
-   :zorder: 415
+   :zorder: 416
 - Stone:
    :x: 3584
    :y: 736
-   :zorder: 416
+   :zorder: 417
 - Stone:
    :x: 3616
    :y: 736
-   :zorder: 417
+   :zorder: 418
 - Stone:
    :x: 3648
    :y: 736
-   :zorder: 418
+   :zorder: 419
 - Stone:
    :x: 3680
    :y: 736
-   :zorder: 419
+   :zorder: 420
 - Stone:
    :x: 3712
    :y: 736
-   :zorder: 420
+   :zorder: 421
 - Stone:
    :x: 3744
    :y: 736
-   :zorder: 421
+   :zorder: 422
 - Stone:
    :x: 3776
    :y: 736
-   :zorder: 422
+   :zorder: 423
 - Stone:
    :x: 3808
    :y: 736
-   :zorder: 423
+   :zorder: 424
 - Stone:
    :x: 3840
    :y: 736
-   :zorder: 424
+   :zorder: 425
 - Stone:
    :x: 3872
    :y: 736
-   :zorder: 425
+   :zorder: 426
 - Stone:
    :x: 3904
    :y: 736
-   :zorder: 426
+   :zorder: 427
 - Stone:
    :x: 3936
    :y: 736
-   :zorder: 427
+   :zorder: 428
 - Stone:
    :x: 3968
    :y: 736
-   :zorder: 428
+   :zorder: 429
 - Stone:
    :x: 4000
    :y: 736
-   :zorder: 429
+   :zorder: 430
 - Stone:
    :x: 4032
    :y: 736
-   :zorder: 430
+   :zorder: 431
 - Stone:
    :x: 4064
    :y: 736
-   :zorder: 431
+   :zorder: 432

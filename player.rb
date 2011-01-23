@@ -19,6 +19,11 @@ class Player < GameObject
     @alive = true
     @using_spring = false
     
+    @jump_sound = Sound["jump.wav"]
+    @shoot_hook_sound = Sound["shoot_hook.wav"]
+    @pick_up_crate_sound = Sound["pick_up_crate.wav"]
+    @die_sound = Sound["die.wav"]
+    
     @spring = PlayerSpring.create
     @spring.player_is self
     @spring.hide!
@@ -66,8 +71,7 @@ class Player < GameObject
     @near_crate = nil
     self.each_collision(Stone, Crate) do |me, stone|
       
-      unless stone == @held_crate
-      
+      unless stone == @held_crate or self.previous_y.nil? or self.previous_x.nil?
         if self.previous_y >= stone.y + 46
           vertical = :bottom
         elsif self.previous_y <= stone.y
@@ -201,6 +205,7 @@ class Player < GameObject
   end
   
   def fire
+    @shoot_hook_sound.play
     @spring.fire_at $window.mouse_x + self.parent.viewport.x, $window.mouse_y
   end
   
@@ -214,19 +219,30 @@ class Player < GameObject
       return
     end
     unless @near_crate.nil?
+      @pick_up_crate_sound.play
       @held_crate = @near_crate
+      @held_crate.being_held = true
+      @held_crate.zorder = 999
     end
   end
   
   def drop_crate
     return if @held_crate.nil?
+    @held_crate.being_held = false
+    @pick_up_crate_sound.play
     @held_crate.y = self.y - 32
     self.y = @held_crate.y
     @held_crate = nil
   end
   
+  def destroy
+    super
+    @spring.destroy
+  end
+  
   def die
     if @alive
+      @die_sound.play
       self.drop_crate      
       self.velocity_y = -10
       self.rotation_rate = -4
@@ -245,13 +261,14 @@ class Player < GameObject
     self.acceleration_x = 0
     self.angle = 0
     self.rotation_rate = 0
-    self.x = 256
-    self.y = 64
+    self.x = self.parent.spawn_point.x
+    self.y = self.parent.spawn_point.y
   end
   
   def jump
     unless @jumping
       @jumping = true
+      @jump_sound.play
       self.velocity_y = @held_crate ? -3 : -10
     end
   end
@@ -270,11 +287,16 @@ class PlayerSpring < GameObject
     @target_factor = 2
     @tween_length = 3.0
     @ready = true
-    
+    @clamp_sound = Sound["clamp.wav"]
     @desired_factor = 2
     
     @claw = Grabber.create
     @clamped = false
+  end
+  
+  def destroy
+    super
+    @claw.destroy
   end
   
   def player_is player
@@ -307,6 +329,7 @@ class PlayerSpring < GameObject
         @claw.each_bounding_box_collision(Stone, Crate) do |claw, stone|
           unless stone == @player.held_crate
             @clamped = true
+            @clamp_sound.play
             puts "CLAMPS!"
             @claw.acceleration_y = 0
             @claw.acceleration_x = 0
@@ -391,6 +414,9 @@ class PlayerSpring < GameObject
     @claw.hide!
     self.factor_x = 2
   end
+end
+
+class SpawnPoint < GameObject
 end
 
 class Grabber < GameObject

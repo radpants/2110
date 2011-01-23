@@ -33,7 +33,7 @@ class Stone < Tile
   
   def setup
     super
-    @image = Image["stone.png"]
+    @image = Image["dark_block.png"]
     update
   end
   

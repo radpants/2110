@@ -1,9 +1,11 @@
 class Crate < GameObject
   traits :bounding_box, :collision_detection, :velocity
+  attr_accessor :being_held
   
   def setup
     @image = Image['crate.png']
     self.rotation_center = :top_left
+    @being_held = false
   end
   
   def update
@@ -52,32 +54,44 @@ end
     
 
 class CrateDrop < GameObject
-  traits :bounding_box, :collision_detection
+  traits :bounding_box, :collision_detection, :timer
   
   def setup
     @image = Image['crate_drop.png']
     self.rotation_center = :bottom_left
     @sign = Sign.create :x => self.x + 26, :y => self.y - 154, :zorder => 1
-    @win_crate_count = 5
+    @win_crate_count = self.parent.crates_to_win
+    puts "#{@win_crate_count} needed to win"
+    @win_sound = Sound["win.wav"]
+    reset
   end
   
   def update
+    return if @won
     @current_crate_count = 0
     
     self.each_collision(Crate) do |me, crate|
-      @current_crate_count += 1
       
-      
+      @current_crate_count += 1 unless crate.being_held
       if @current_crate_count >= @win_crate_count
         win
+        return
       end
     end
     
     @sign.show_remaining @win_crate_count - @current_crate_count
+    #puts @current_crate_count
   end
   
   def win
+    @win_sound.play
     @sign.show_victory
+    @won = true
+    after(1000){ self.parent.next_level }
+  end
+  
+  def reset
+    @won = false
   end
     
 end
