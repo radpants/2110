@@ -2,14 +2,16 @@ include Chingu
 
 class Player < GameObject
   traits :bounding_box, :collision_detection, :velocity, :effect, :timer
+  attr_accessor :held_crate
   
   def setup
     self.input = { 
       [:holding_left, :holding_a] => :go_left, 
       [:holding_right, :holding_d] => :go_right, 
-      [:space, :w, :up] => :jump,
+      [:w, :up] => :jump,
       [:mouse_left] => :fire,
-      [:released_mouse_left] => :retract
+      [:released_mouse_left] => :retract,
+      [:space, :mouse_right, :e] => :action
     }
     
     @speed = 1
@@ -44,128 +46,131 @@ class Player < GameObject
       self.velocity_y *= 0.95
     end
     
+    unless @held_crate.nil?
+      @held_crate.x = self.x - 14
+      @held_crate.y = self.y - 52
+    end
+    
     @spring.x = self.x
     @spring.y = self.y - 16
     
-    @speed = @jumping ? 0.5 : 1.0
+    if @held_crate and !@jumping
+      @speed = @jumping ? 0.2 : 0.5
+    else
+      @speed = @jumping ? 0.5 : 1.0
+    end
+    
     
     @jumping = true
     @against_wall = :none
+    @near_crate = nil
     self.each_collision(Stone, Crate) do |me, stone|
-      #if self.previous_y > stone.y + 32 and self.previous_x < stone.x - 16 and self.previous_x > stone.x + 48
-      #  me.y = stone.y + 70
-      #  self.velocity_y *= -0.5
-      #elsif self.previous_y <= stone.y and self.previous_x < stone.x - 16 and self.previous_x > stone.x + 48
-      #  @jumping = false
-      #  me.y = stone.y
-      #elsif me.previous_x > stone.x and self.previous_y 
-      #  me.x = stone.x + 54        
-      #else
-      #  me.x = stone.x - 16
-      #end
       
-      if self.previous_y >= stone.y + 46
-        vertical = :bottom
-      elsif self.previous_y <= stone.y
-        vertical = :top
-      else
-        vertical = :middle
-      end
+      unless stone == @held_crate
       
-      if self.previous_x >= stone.x + 46
-        horizontal = :right
-        #stone.color = Color::RED
-      elsif self.previous_x <= stone.x - 14
-        horizontal = :left
-        #stone.color = Color::GREEN
-      else
-        horizontal = :center
-        #stone.color = Color::BLUE
-      end
+        if self.previous_y >= stone.y + 46
+          vertical = :bottom
+        elsif self.previous_y <= stone.y
+          vertical = :top
+        else
+          vertical = :middle
+        end
       
-      if self.velocity_y.abs > self.velocity_x.abs
-        direction = :vertical
-      else
-        direction = :horizontal
-      end
+        if self.previous_x >= stone.x + 46
+          horizontal = :right
+          #stone.color = Color::RED
+        elsif self.previous_x <= stone.x - 14
+          horizontal = :left
+          #stone.color = Color::GREEN
+        else
+          horizontal = :center
+          #stone.color = Color::BLUE
+        end
       
-      if vertical == :top
-        if horizontal == :center
-          self.y = stone.y
-          self.velocity_y = 0
-          @jumping = false
-        elsif horizontal == :left
-          if direction == :horizontal
+        if self.velocity_y.abs > self.velocity_x.abs
+          direction = :vertical
+        else
+          direction = :horizontal
+        end
+      
+        if vertical == :top
+          if horizontal == :center
             self.y = stone.y
             self.velocity_y = 0
             @jumping = false
-          else
-            self.x = stone.x - 14
-            self.velocity_x = 0
-            self.acceleration_x = 0
-            @against_wall = :left
+          elsif horizontal == :left
+            if direction == :horizontal
+              self.y = stone.y
+              self.velocity_y = 0
+              @jumping = false
+            else
+              self.x = stone.x - 14
+              self.velocity_x = 0
+              self.acceleration_x = 0
+              @against_wall = :left
+            end
+          elsif horizontal == :right
+            if direction == :horizontal
+              self.y = stone.y
+              self.velocity_y = 0
+              @jumping = false
+            else
+              self.x = stone.x + 46
+              self.velocity_x = 0
+              self.acceleration_x = 0
+              @against_wall = :right
+            end
           end
-        elsif horizontal == :right
-          if direction == :horizontal
-            self.y = stone.y
-            self.velocity_y = 0
-            @jumping = false
-          else
-            self.x = stone.x + 46
-            self.velocity_x = 0
-            self.acceleration_x = 0
-            @against_wall = :right
-          end
-        end
-      elsif vertical == :bottom
-        if horizontal == :center
-          self.y = stone.y + 64
-          self.velocity_y = 0
-        elsif horizontal == :left
-          if direction == :horizontal
+        elsif vertical == :bottom
+          if horizontal == :center
             self.y = stone.y + 64
             self.velocity_y = 0
-          else
+          elsif horizontal == :left
+            if direction == :horizontal
+              self.y = stone.y + 64
+              self.velocity_y = 0
+            else
+              self.x = stone.x - 14
+              self.velocity_x = 0
+              self.acceleration_x = 0
+              @against_wall = :left
+            end
+          elsif horizontal == :right
+            if direction == :horizontal
+              self.y = stone.y + 64
+              self.velocity_y = 0
+            else
+              self.x = stone.x + 46
+              self.velocity_x = 0
+              self.acceleration_x = 0
+              @against_wall = :right
+            end
+          end
+        elsif vertical == :middle
+          if horizontal == :center
+            # there is no way this should happen.. but whatever
+            if self.x > stone.x + 16 # right
+              self.x = stone.x + 46
+              self.velocity_x = 0
+              self.acceleration_x = 0
+              @against_wall = :right
+            else
+              self.x = stone.x - 14
+              self.velocity_x = 0
+              self.acceleration_x = 0
+              @against_wall = :left
+            end
+          elsif horizontal == :left
             self.x = stone.x - 14
             self.velocity_x = 0
             self.acceleration_x = 0
             @against_wall = :left
-          end
-        elsif horizontal == :right
-          if direction == :horizontal
-            self.y = stone.y + 64
-            self.velocity_y = 0
-          else
+          elsif horizontal == :right
             self.x = stone.x + 46
             self.velocity_x = 0
             self.acceleration_x = 0
             @against_wall = :right
           end
-        end
-      elsif vertical == :middle
-        if horizontal == :center
-          # there is no way this should happen.. but whatever
-          if self.x > stone.x + 16 # right
-            self.x = stone.x + 46
-            self.velocity_x = 0
-            self.acceleration_x = 0
-            @against_wall = :right
-          else
-            self.x = stone.x - 14
-            self.velocity_x = 0
-            self.acceleration_x = 0
-            @against_wall = :left
-          end
-        elsif horizontal == :left
-          self.x = stone.x - 14
-          self.velocity_x = 0
-          self.acceleration_x = 0
-          @against_wall = :left
-        elsif horizontal == :right
-          self.x = stone.x + 46
-          self.velocity_x = 0
-          self.acceleration_x = 0
-          @against_wall = :right
         end
       end
     end
@@ -176,18 +181,23 @@ class Player < GameObject
       end
     end
     
+    self.each_collision(Crate) do |me, crate|
+      @near_crate = crate
+    end
+    
     self.x = 16 if self.x < 16
     self.x = self.parent.viewport.game_area.width if self.x > self.parent.viewport.game_area.width
+    die if self.y > 768
   end
   
   def go_left
-    self.acceleration_x -= @speed unless @against_wall == :right
     self.factor_x = -2
+    self.acceleration_x -= @speed unless @against_wall == :right
   end
   
   def go_right
-    self.acceleration_x += @speed unless @against_wall == :left
     self.factor_x = 2
+    self.acceleration_x += @speed unless @against_wall == :left
   end
   
   def fire
@@ -198,13 +208,31 @@ class Player < GameObject
     @spring.retract
   end
   
+  def action
+    unless @held_crate.nil?
+      self.drop_crate
+      return
+    end
+    unless @near_crate.nil?
+      @held_crate = @near_crate
+    end
+  end
+  
+  def drop_crate
+    return if @held_crate.nil?
+    @held_crate.y = self.y - 32
+    self.y = @held_crate.y
+    @held_crate = nil
+  end
+  
   def die
     if @alive
+      self.drop_crate      
       self.velocity_y = -10
       self.rotation_rate = -4
       @alive = false
-      after(1000) { self.spawn }
-      during(1000){ self.color = Color::RED }
+      after(500) { self.spawn }
+      during(500){ self.color = Color::RED }
     end
   end
   
@@ -224,7 +252,7 @@ class Player < GameObject
   def jump
     unless @jumping
       @jumping = true
-      self.velocity_y = -10
+      self.velocity_y = @held_crate ? -3 : -10
     end
   end
   
@@ -276,13 +304,15 @@ class PlayerSpring < GameObject
         @claw.acceleration_x = -2 * Math.cos(angle_to_player)
         @claw.acceleration_y = -2 * Math.sin(angle_to_player) 
         
-        @claw.each_bounding_box_collision(Stone) do |claw, stone|
-          @clamped = true
-          puts "CLAMPS!"
-          @claw.acceleration_y = 0
-          @claw.acceleration_x = 0
-          @claw.velocity_y = 0
-          @claw.velocity_x = 0
+        @claw.each_bounding_box_collision(Stone, Crate) do |claw, stone|
+          unless stone == @player.held_crate
+            @clamped = true
+            puts "CLAMPS!"
+            @claw.acceleration_y = 0
+            @claw.acceleration_x = 0
+            @claw.velocity_y = 0
+            @claw.velocity_x = 0
+          end
         end       
       end
       

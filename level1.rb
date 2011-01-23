@@ -10,11 +10,9 @@ class Level1 < GameState
     
     Backdrop.create :zorder => 0
     
-    @player = Player.create :x => 256, :y => 256, :zorder => 1000
+    @player = Player.create :x => 3520, :y => 256, :zorder => 1000
     
     @cursor = Cursor.create :x => 100, :y => 100, :zorder => 2000
-    
-    @test_crate = Crate.create :x => 100, :y => 500, :zorder => 1200, :color => Color.new(0xffaaccee)
   end
   
   def update
