@@ -4,3 +4,11 @@ An entry for the Mini Ludum Dare #23
 Basically you are a little robot with a springy grappling hook and must avoid fire whilest you collect crates to deposite somewhere on the level.
 
 Made with Chingu (https://github.com/ippa/chingu) in Ruby
+
+requires: chingu, texplay
+
+gem install chingu
+sudo gem install texplay
+* cd into 2110 folder *
+ruby app.rb
+
