@@ -195,11 +195,13 @@ class Player < GameObject
   end
   
   def go_left
+    return unless @alive
     self.factor_x = -2
     self.acceleration_x -= @speed unless @against_wall == :right
   end
   
   def go_right
+    return unless @alive
     self.factor_x = 2
     self.acceleration_x += @speed unless @against_wall == :left
   end
@@ -303,19 +305,21 @@ class PlayerSpring < GameObject
     @player = player
   end
   
-  # TODO: Make this work better!! Such as:
-  #   The claw is a projectile, which is fired out of the player
-  #   The spring image just updates every frame to connect the player to the claw
-  #   If the claw travels {SOME_MAX} distance without hitting anything, it retracts
-  #   On mouse release, the claw releases and retracts (if it's connected)
-  #   On mouse release, the claw retracts if it didn't connect
+  def draw
+    if true
+      angle_to_player = Math.atan2( @claw.y - @player.y, @claw.x - @player.x )
+      self.factor_x = dist(@claw.x,@claw.y,self.x,self.y) / 16.0
+      self.angle = Math.atan2( @claw.y - self.y, @claw.x - self.x) * ( 180.0 / 3.14159 )
+    end
+    super
+  end
   
   def update
     if self.visible
       
       angle_to_player = Math.atan2( @claw.y - @player.y, @claw.x - @player.x )
-      self.factor_x = dist(@claw.x,@claw.y,self.x,self.y) / 16.0
-      self.angle = Math.atan2( @claw.y - self.y, @claw.x - self.x) * ( 180.0 / 3.14159 )
+      #self.factor_x = dist(@claw.x,@claw.y,self.x,self.y) / 16.0
+      #self.angle = Math.atan2( @claw.y - self.y, @claw.x - self.x) * ( 180.0 / 3.14159 )
       
       if @clamped
         s = (self.factor_x*self.factor_x) * 0.03
@@ -323,8 +327,8 @@ class PlayerSpring < GameObject
         @player.acceleration_x += s * Math.cos(self.angle * (3.14159 / 180.0 ))
         @player.velocity_y += s * Math.sin(self.angle * (3.14159 / 180.0 ))
       else
-        @claw.acceleration_x = -2 * Math.cos(angle_to_player)
-        @claw.acceleration_y = -2 * Math.sin(angle_to_player) 
+        @claw.acceleration_x = -4 * Math.cos(angle_to_player)
+        @claw.acceleration_y = -4 * Math.sin(angle_to_player) 
         
         @claw.each_bounding_box_collision(Stone, Crate) do |claw, stone|
           unless stone == @player.held_crate
@@ -386,8 +390,8 @@ class PlayerSpring < GameObject
     @claw.angle = theta * ( 180.0 / 3.14159 )
     @claw.show!
     self.show!
-    @claw.velocity_x = 45 * Math.cos(theta)
-    @claw.velocity_y = 45 * Math.sin(theta)
+    @claw.velocity_x = 50 * Math.cos(theta)
+    @claw.velocity_y = 50 * Math.sin(theta)
     
     
   end
@@ -425,5 +429,7 @@ class Grabber < GameObject
   def setup
     @image = Image["claw.png"]
     self.scale = 2
+    self.rotation_center = :left_middle
+    self.hide!
   end
 end

@@ -3,7 +3,7 @@ class Crate < GameObject
   attr_accessor :being_held
   
   def setup
-    @image = Image['crate.png']
+    @image = Image['gold_crate.png']
     self.rotation_center = :top_left
     @being_held = false
   end
@@ -29,9 +29,15 @@ class Sign < GameObject
       :yay => 6..6,
       :win => 7..7,
       :woot => 8..8,
-      :nice => 9..9
+      :nice => 9..9,
+      :seven => 10..10,
+      :eight => 11..11,
+      :nine => 12..12,
+      :ten => 13..13,
+      :eleven => 14..14,
+      :twelve => 15..15
     }
-    @numbers = [:one,:two,:three,:four,:five,:six]
+    @numbers = [:one,:two,:three,:four,:five,:six,:seven,:eight,:nine,:ten,:eleven,:twelve]
     @victories = [:yay, :win, :woot, :nice]
     @animation = @animations[:nice]
     update
